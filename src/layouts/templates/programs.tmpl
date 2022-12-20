@@ -1,0 +1,9 @@
+{{ define `main` }}
+<section class="content">
+<h2>{{ .title }}</h2>
+  <img src="/static/img/director.jpg" style="float:left; margin: 2rem 1.6rem 1rem 2rem; width: 12%;" />
+
+  <blockquote style="padding-left: 20%;"><strong>{{ .director }}:</strong><br /> {{ .quote }}</blockquote>
+{{ .content }}
+</section>
+{{ end }}

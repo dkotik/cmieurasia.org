@@ -1,0 +1,43 @@
+---
+import { localizePath } from "astro-i18next";
+import i18next, { t } from "i18next";
+import Language from "./language.astro"
+---
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+        <div id="logo">
+          <img src="/assets/logo.svg" />
+        </div>
+    </a>
+
+    <!--
+    <a class="navbar-item" href={localizePath("/index.html")}>{t("menu.home")}</a>
+    <a class="navbar-item" href={localizePath("/about.html")}>{t("menu.about")}</a>
+    <a class="navbar-item" href={localizePath("/sermons.html")}>{t("menu.sermons")}</a>
+    <a class="navbar-item" href={localizePath("/location.html")}>{t("menu.location")}</a>
+    <a class="navbar-item" href={localizePath("/contact.html")}>{t("menu.contact")}</a>
+    <div class="navbar-end">
+      <div class="navbar-item right" style="margin-right: 1em;">
+        <Language />
+      </div>
+    </div>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>-->
+  </div>
+</nav>
+
+<style>
+.navbar {
+    background-color: transparent !important;
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+.navbar-brand {
+    margin: 1em;
+}
+</style>

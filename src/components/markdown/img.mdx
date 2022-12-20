@@ -1,0 +1,8 @@
+import { Picture } from "@astrojs/image/components";
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes
+
+<figure>
+<Picture src={props.src} alt={props.alt} sizes="((min-width: 50em) and (max-width: 60em)) 50em, ((min-width: 30em) and (max-width: 50em)) 30em, (max-width: 30em) 20em" widths={[400, 600]} aspectRatio={props.src.width/props.src.height} />
+
+{ props.title ? <figcaption>{props.title}</figcaption> : ""}
+</figure>

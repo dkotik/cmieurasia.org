@@ -1,0 +1,44 @@
+---
+import { t } from "i18next";
+import { SEO } from "astro-seo"; // https://github.com/jonasmerlin/astro-seo
+import { HeadHrefLangs } from "astro-i18next/components";
+
+import { getImage } from "@astrojs/image";
+const { src: cardImage } = await getImage({
+    src: import("./share.png"),
+    width: 225,
+    height: 225,
+    // aspectRatio: 16/9,
+    format: "jpg"
+});
+
+const title = Astro.props.title
+    ? "TO: " + Astro.props.title
+    : "Truthonly.com";
+---
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<SEO
+  title={ title } // browser tab
+  description={ Astro.props.description || t("description") }
+  openGraph={{
+    basic: {
+        title: title,
+        "type": "website",
+        image: cardImage
+    },
+    image: {
+        alt: title
+    }
+  }}
+  extend={{
+      meta: [
+        {
+            name: "keywords",
+            content: Astro.props.keywords?.join(", ")
+        }
+      ]
+  }} />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">

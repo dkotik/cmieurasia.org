@@ -1,0 +1,11 @@
+{
+  "title": "Renewal Church",
+  "title-prefix": "RC",
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "sermons": "Sermons",
+    "location": "Location",
+    "contact": "Contact"
+  }
+}

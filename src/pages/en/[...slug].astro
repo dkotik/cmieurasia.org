@@ -1,0 +1,72 @@
+---
+import DefaultLayout from "@layouts/default.astro";
+import Image from "@components/markdown/img.mdx";
+import YouTubeVideoMDX from "@components/markdown/video.mdx";
+import Error from "@components/markdown/error.mdx";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const images = {};
+  for (const [key, value] of Object.entries(import.meta.glob([
+      "../../content/**/*.jpg",
+      "../../content/**/*.png",
+      "../../content/**/*.svg",
+      "../../content/**/*.webp",
+  ], { import: "default" }))) images[key.replace(/^\.\.\/\.\.\/content\//, "")] = value;
+
+  return Promise.all((await Astro.glob("../../content/en/**/*.mdx"))
+    .filter((page) => !page?.frontmatter?.draft) // skip drafts
+    .map(async ({ default: Content, frontmatter, file, url }) => {
+        const slug = url
+          .replace(/^src\/content\/en\//, "")
+          .replace(/\.mdx$/, "");
+        return {
+          params: { slug },
+          props: {
+            Content,
+            frontmatter,
+            images,
+            path: "en/" + slug.replace(/[^\\\/]+$/, "")
+          }
+        }
+     })
+  )
+}
+
+// const { slug } = Astro.params;
+const { Content, frontmatter, path, images } = Astro.props;
+
+const matchYoutubeLink = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/
+
+---
+<DefaultLayout
+    title={frontmatter?.title}
+    description={frontmatter?.description}
+    class={frontmatter?.class}
+>
+    <h1 class="title">{frontmatter?.title}</h1>
+    <Content components={{
+        img: async ({ src, alt, title }) => {
+            // console.log(images, images[path + src]);
+            const image = images[path + src];
+            if (!image) {
+                const matched = src.match(matchYoutubeLink)
+                if (matched) {
+                    return YouTubeVideoMDX({ID: matched[5]})
+                }
+
+                console.error(`ERROR: image "${src}" could not be located relative to "${path}"`);
+                return Error({
+                    message: `image "${src}" could not be located relative to "${path}"`
+                });
+            }
+            return Image({ src: await image(), alt, title });
+        }
+    }} />
+</DefaultLayout>
+
+<style>
+:global(figure) {
+    max-width: 25em;
+    margin: 0 auto !important;
+}
+</style>

@@ -1,0 +1,65 @@
+{{ define `header` }}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ .locale }}">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>{{ .title }}</title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/static/img/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/static/img/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/static/img/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/static/img/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/static/img/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/static/img/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/static/img/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/static/img/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/static/img/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/static/img/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/static/img/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="title" content="{{ .title }}" />
+<meta name="description" content="{{ .description }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="keywords" content="{{ .keywords }}" />
+<link rel="image_src" href="/static/img/share.png" />
+<meta property="og:image" content="/static/img/share.png" name="og:image"/>
+<meta property="og:image" content="200" name="og:image:width"/>
+<meta property="og:image" content="200" name="og:image:height"/>
+<meta property="og:description" content="{{ .description }}" name="og:description" />
+<meta property="og:url" content="{{ .root }}" name="og:url" />
+<meta property="og:type" content="website" name="og:type" />
+<meta property="og:title" content="{{ .title }}" name="og:title" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ .title }}" />
+<meta name="twitter:description" content="{{ .description }}" />
+<meta name="twitter:image" content="/static/img/share.png" />
+<link rel="stylesheet" href="/static/style.css" />
+{{ block "head" . }}{{ end }}
+</head>
+<body{{ if .pageClass }} class="{{ .pageClass }}"{{ end }}><div id="frame">
+
+<header
+    {{- if eq .locale `en-US` }} class="en"
+    {{- else if eq .locale `uk-UA` }} class="ua"
+    {{- end }}>
+    <nav id="lang">
+        {{ if eq .locale `en-US` -}}
+          <a href="/ua/index.html">UA</a>
+          <a href="/index.html">RU</a>
+        {{- end }}
+        {{ if eq .locale `ru-RU` -}}
+          <a href="/ua/index.html">UA</a>
+          <a href="/en/index.html">EN</a>
+        {{- end }}
+        {{ if eq .locale `uk-UA` -}}
+          <a href="/index.html">RU</a>
+          <a href="/en/index.html">EN</a>
+        {{- end }}
+    </nav>
+</header>
+{{ end }}

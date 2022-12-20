@@ -1,0 +1,43 @@
+---
+import { localizePath } from "astro-i18next";
+import i18next, { t } from "i18next";
+import Navigation from "./fragments/navigation.astro";
+import Language from "./fragments/language.astro";
+import HeadMeta from "./fragments/headmeta.astro";
+import Footer from "./fragments/footer.astro";
+import './styles/style.sass';
+
+const locale = /^\/en\//.test(Astro.url.pathname)
+    ? "en" : /^\/ru\//.test(Astro.url.pathname) ? "ru" : "ua";
+i18next.changeLanguage(locale);
+---
+<html>
+  <head>
+    <HeadMeta
+        title={Astro.props.title}
+        description={Astro.props.description}
+        keywords={Astro.props.keywords}
+    />
+  </head>
+  <body class={Astro.props.class || "page"}>
+    <slot name="hero">
+        <img alt="Church Ministries Institute Logo" src="/img/header/en-dark.png" />
+    </slot>
+    <main class="container">
+        <section class="content">
+          <slot />
+        </section>
+        </main>
+    <footer>
+        <slot name="footer">
+            <Footer />
+        </slot>
+    </footer>
+  </body>
+</html>
+
+<style>
+#lang {
+  font-size: 1.6em;
+}
+</style>

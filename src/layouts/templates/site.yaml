@@ -1,0 +1,20 @@
+language: "Russian"
+locale: "ru-RU"
+en:
+  locale: "en-US"
+  root: "https://cmieurasia.org/"
+  title: "Church Ministries Institute"
+  keywords: "church ministries institute eurasia cmi kyiv kiev ukraine theological training"
+  description: "The Church Ministries Institute has been preparing Christians for local church ministry since 1994 by providing quality theological education, seminars, and workshops. Training takes place in our international center (Kyiv, Ukraine), regional educational centers, local churches, and online. Our programs are accredited by EAAA. Having received a quality education and practical ministry skills, many of our graduates are effectively serving in local churches across Eurasia."
+ru:
+  locale: "ru-RU"
+  root: "https://cmieurasia.org/ru/"
+  title: "Институт Церковного Служения"
+  keywords: "church ministries institute eurasia cmi kyiv kiev ukraine theological training"
+  description: "Институт церковного служения с 1994 года подготавливает христианских работников для церковного служения посредством богословских программ, семинаров и треннингов. Обучение проходит в международном центре (Киев, Украина), региональных образовательных центрах, на базе поместных церквей и в режиме онлайн. Программа института аккредитована ЕААА. Наши выпускники, получив качественное образование и практические навыки служения, активно трудятся в церквах Евразии."
+ua:
+  locale: "uk-UA"
+  root: "https://cmieurasia.org/ua/"
+  title: "Інститут Церковного Служіння"
+  keywords: "church ministries institute eurasia cmi kyiv kiev ukraine theological training"
+  description: "Институт церковного служения с 1994 года подготавливает христианских работников для церковного служения посредством богословских программ, семинаров и треннингов. Обучение проходит в международном центре (Киев, Украина), региональных образовательных центрах, на базе поместных церквей и в режиме онлайн. Программа института аккредитована ЕААА. Наши выпускники, получив качественное образование и практические навыки служения, активно трудятся в церквах Евразии."

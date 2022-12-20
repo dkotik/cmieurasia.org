@@ -1,0 +1,106 @@
+{{ define "head" }}
+  <script type="text/javascript" src="{{ asset "ember" "javascript/libraries/vue.min.js"}}"></script>
+  <script type="text/javascript" src="{{ asset "ember" "javascript/components/newsletter.js"}}"></script>
+{{ end }}
+
+{{ $data := data `/static/templates/site.yaml` }}
+{{ if not .language }}
+  {{/* For some reason have to duplicate here. */}}
+  {{ $data = merge $data $data.ru . }}
+{{ else if eq .language `Русский` }}
+  {{ $data = merge $data $data.ru . }}
+{{ else if eq .language `Українська` }}
+  {{ $data = merge $data $data.ua . }}
+{{ else }}
+  {{ $data = merge $data $data.en . }}
+{{ end }}
+
+{{ with $data }}
+
+{{ template `header` . }}
+
+{{ if eq .locale `en-US`}}
+<nav id="menu">
+    <a href="/en/index.html"{{ if eq .source "/en/index.md" }} class="current"{{end}}>Home</a>
+    <a href="/en/programs.html"{{ if eq .source "/en/programs.md" }} class="current"{{end}}>Programs</a>
+    <a href="/en/seminars.html"{{ if eq .source "/en/seminars.md" }} class="current"{{end}}>Seminars</a>
+    <a href="/en/enroll.html"{{ if eq .source "/en/enroll.md" }} class="current"{{end}}>Apply</a>
+    <a href="/en/donate.html"{{ if eq .source "/en/donate.md" }} class="current"{{end}}>Give</a>
+    <a href="/en/contact.html"{{ if eq .source "/en/contact.md" }} class="current"{{end}}>Contact</a>
+</nav>
+{{ else if eq .locale `uk-UA`}}
+<nav id="menu">
+    <a href="/ua/index.html"{{ if eq .source "/index.md" }} class="current"{{end}}>Про нас</a>
+    <a href="/ua/programs.html"{{ if eq .source "/ru/programs.md" }} class="current"{{end}}>Програми</a>
+    <a href="/ua/seminars.html"{{ if eq .source "/ru/seminars.md" }} class="current"{{end}}>Тренінги</a>
+    <a href="/ua/enroll.html"{{ if eq .source "/ru/enroll.md" }} class="current"{{end}}>Абітурієнту</a>
+    <a href="/ua/donate.html"{{ if eq .source "/ru/donate.md" }} class="current"{{end}}>Підтримати</a>
+    <a href="/ua/contact.html"{{ if eq .source "/ru/contact.md" }} class="current"{{end}}>Контакти</a>
+</nav>
+{{ else }}
+<nav id="menu">
+    <a href="/index.html"{{ if eq .source "/index.md" }} class="current"{{end}}>О нас</a>
+    <a href="/ru/programs.html"{{ if eq .source "/ru/programs.md" }} class="current"{{end}}>Программы</a>
+    <a href="/ru/seminars.html"{{ if eq .source "/ru/seminars.md" }} class="current"{{end}}>Тренинги</a>
+    <a href="/ru/enroll.html"{{ if eq .source "/ru/enroll.md" }} class="current"{{end}}>Абитуриенту</a>
+    <a href="/ru/donate.html"{{ if eq .source "/ru/donate.md" }} class="current"{{end}}>Пожертвовать</a>
+    <a href="/ru/contact.html"{{ if eq .source "/ru/contact.md" }} class="current"{{end}}>Контакты</a>
+</nav>
+{{ end }}
+
+<main>
+{{ block `main` . }}
+<section class="content">
+    {{ .content }}
+</section>
+
+{{/*
+  <newsletterform locale="{{ .locale }}" style="padding: 2em;" v-cloak>
+    {{ if eq .locale `en-US`}}
+      <h1>Thank you!</h1>
+      You will receive CMI newsletter roughly every 3-6 months.
+    {{ else }}
+      <h1>Благодарим!</h1>
+      Мы будем вас оповещать о последних событиях ИЦС каждые 3-6 месяца.
+    {{ end }}
+  </newsletterform>
+*/}}
+
+<p>
+  <a href="http://eepurl.com/gryJ5z" rel="noreferrer" class="button is-info" target="_blank" style="display: block; max-width: 60%; margin: 0 auto; height: auto; white-space: normal;" title="
+  {{ if eq .locale `en-US`}}
+    Subscribe to the Newsletter">Subscribe to the Newsletter
+  {{ else }}
+    Подписаться на рассылку">Подписаться на рассылку
+  {{ end }}
+  </a>
+</p>
+
+{{/*
+{#<p><img src="img/studies.jpg" alt="Seminar" style="display:block;margin: 0 auto;width: 60%;" /></p>#}
+{#
+
+<section class="hero">
+  <div class="hero-body" style="width: 80%; margin: 0 auto 3rem auto;background-image:url(img/studies.jpg);padding: 12rem 2rem 2rem 2rem;">
+    <div class="level">
+      <h2 class="level-item">Bible Schools</h2>
+      <h2 class="level-item">Seminars</h2>
+      <h2 class="level-item">Online Courses</h2>
+    </div>
+  </div>
+</section>
+
+<p>We prepare men and women for quality ministry in the local church through bible schools, seminars, and online courses. We believe that Christ not only died for the Church but that He is now working mightily through the Church to bring about His will.  That is why since its beginnings the CMI has focused its efforts on the local church.  Every program and every class is specifically designed to meet the needs of local churches in Eurasia.</p>
+workers who will establish and develop churches in Eurasia, that are ready to replicate new churches cross culturally
+#}
+*/}}
+{{ template `partners` . }}
+<script type="text/javascript">
+var app = new Vue({'el': 'main'});
+</script>
+{{ end }}
+</main>
+
+{{ template `footer` }}
+
+{{ end }}

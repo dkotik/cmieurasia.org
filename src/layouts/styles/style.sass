@@ -1,0 +1,167 @@
+@charset "utf-8"
+/*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
+
+// Евгений Александрович Ященко, [14.09.21 11:22]
+// 21232c - темно-серый
+//
+// Евгений Александрович Ященко, [14.09.21 11:23]
+// 4d91b9 - синий (боковые рамки, нижняя часть, кнопка "подписаться на рассылку") - в темной версии
+//
+// Евгений Александрович Ященко, [14.09.21 11:24]
+// Цвета RGB если что
+//
+// Евгений Александрович Ященко, [14.09.21 11:26]
+// Кнопку - подписаться на рассылку, можно сделать тоже этим синим, чтобы в одном уже цвете было - 4d91b9 - синий, что думаешь?
+//
+// Евгений Александрович Ященко, [14.09.21 11:34]
+// Кнопку подписаться на рассылку - в светлой версии сделать темно-серой  - 21232c
+//
+// Евгений Александрович Ященко, [14.09.21 11:48]
+// Будет актуально также сделать те же цвета для всех синих кнопок (Подробнее, скачать...) - в темной версии делать их синим - 4d91b9, а в светлой серым - 21232c
+
+$primary: #4d91b9
+$info: #21232c
+$link: #4d91b9
+
+@import "bulma/utilities/_all"
+@import "bulma/base/_all"
+@import "bulma/elements/_all"
+@import "bulma/components/_all"
+@import "bulma/grid/_all"
+@import "bulma/layout/_all"
+
+section.content *, .columns.content *, section strong
+  color: #cfcfcf
+
+body
+    padding: 0
+    border: 0
+    background-color: #21232c
+    color: #f0f0f0
+    position: relative
+
+#frame
+    @extend .container
+    min-height: 100vh
+    max-width: 50rem
+    border-color: #4d91b9
+    border-width: 0 2px
+    border-style: solid
+    background-color: #2d2f3c
+    box-shadow: 0 0 1rem #1b1818
+
+nav#menu
+    text-transform: uppercase
+    font-size: 0.8rem
+    padding: 2rem
+    text-align: center
+    a
+        color: #f0f0f0
+        margin-right: 1rem
+        &:hover
+            color: #78b7dd
+        &.current
+            font-weight: bold
+            color: #4d91b9
+
+main
+    clear: both
+    padding: 2em 5vw 2em 5vw
+    min-height: 70vh
+
+    li > ul
+        margin: 1rem 0 1rem 2rem
+
+    .partners.level
+        img
+            max-width: 4rem
+
+.hero
+    .level
+        h1, h2, h3
+            font-weight: bold
+            font-size: 4vw
+            color: white
+            -webkit-text-stroke: 1px #141317
+            font-size: 160%
+
+figure.video
+    position: relative
+    padding-top: 56%
+    iframe
+        top: 0
+        left: 0
+        position: absolute
+        width: 100%
+        height: 100%
+        display: block
+        border: 2px solid black
+
+header.en
+    background-image: url('/static/img/header/en-dark.png')
+
+header.ua
+    background-image: url('/static/img/header/ua-dark.png')
+
+header
+    background-image: url('/static/img/header/ru-dark.png')
+    height: 0
+    background-position: center bottom
+    background-size: cover
+    background-repeat: no-repeat
+    padding-top: 50%
+    font-family: Verdana, sans-serif
+    // margin-bottom: -12%
+    // position: relative
+    // margin-bottom: -10%
+    // margin-bottom: -6.5rem
+    // z-index: 0
+    nav#lang
+        position: absolute
+        top: 1rem
+        right: 1rem
+        font-weight: bold
+        font-size: 0.7rem !important
+        a
+            display: block
+        img
+            height: 1rem
+            width: 2rem
+    .title
+        color: #163b89
+        position: absolute
+        // margin: 0 auto
+        text-align: center
+        // padding: 0 4rem 1rem 12rem
+        font-size: 1.6rem
+        // line-height: 140%
+    // #logo
+    //     position: absolute
+    //     bottom: -39px
+    //     left: 2rem
+    //     height: 80px
+    //     width: auto
+
+footer
+    color: $grey-dark
+    font-size: 0.8rem
+    padding: 1rem 1.5rem 0.8rem .5rem
+    // border-top: 0.5rem solid #b9d6e3
+    background-color: $primary
+    .right
+        float: right
+
+    .social
+        white-space: nowrap
+    a
+        color: #202020
+        margin-left: 1rem
+        svg
+            height: 1rem
+            fill: #202020
+    a:hover
+        svg
+            fill: #0f7499
+
+#{'[v-cloak]'}
+  display: none

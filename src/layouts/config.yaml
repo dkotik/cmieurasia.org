@@ -1,0 +1,35 @@
+templates:
+  default:
+    - templates/aux/footer.tmpl
+    - templates/aux/head.tmpl
+    - templates/aux/partners.tmpl
+    - templates/page.tmpl
+  error:
+    - templates/aux/footer.tmpl
+    - templates/aux/head.tmpl
+    - templates/aux/partners.tmpl
+    - templates/page.tmpl
+  contact:
+    - templates/aux/footer.tmpl
+    - templates/aux/head.tmpl
+    - templates/aux/partners.tmpl
+    - templates/page.tmpl
+    - templates/contact.tmpl
+  donate:
+    - templates/aux/footer.tmpl
+    - templates/aux/head.tmpl
+    - templates/aux/partners.tmpl
+    - templates/page.tmpl
+    - templates/donate.tmpl
+  enroll:
+    - templates/aux/footer.tmpl
+    - templates/aux/head.tmpl
+    - templates/aux/partners.tmpl
+    - templates/page.tmpl
+    - templates/enroll.tmpl
+  programs:
+    - templates/aux/footer.tmpl
+    - templates/aux/head.tmpl
+    - templates/aux/partners.tmpl
+    - templates/programs.tmpl
+    - templates/page.tmpl

@@ -1,0 +1,12 @@
+{
+  "contact": {
+    "name": "Your Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "message": "Message",
+    "send": "Send",
+    "thankyou": "Thank you for reaching out to us! We typically respond within 48 hours.",
+    "timeout": "Connection timed out!",
+    "error": "Connection failed!"
+  }
+}
