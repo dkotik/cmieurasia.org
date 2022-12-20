@@ -17,43 +17,6 @@
 
 {{ with $data }}
 
-{{ template `header` . }}
-
-{{ if eq .locale `en-US`}}
-<nav id="menu">
-    <a href="/en/index.html"{{ if eq .source "/en/index.md" }} class="current"{{end}}>Home</a>
-    <a href="/en/programs.html"{{ if eq .source "/en/programs.md" }} class="current"{{end}}>Programs</a>
-    <a href="/en/seminars.html"{{ if eq .source "/en/seminars.md" }} class="current"{{end}}>Seminars</a>
-    <a href="/en/enroll.html"{{ if eq .source "/en/enroll.md" }} class="current"{{end}}>Apply</a>
-    <a href="/en/donate.html"{{ if eq .source "/en/donate.md" }} class="current"{{end}}>Give</a>
-    <a href="/en/contact.html"{{ if eq .source "/en/contact.md" }} class="current"{{end}}>Contact</a>
-</nav>
-{{ else if eq .locale `uk-UA`}}
-<nav id="menu">
-    <a href="/ua/index.html"{{ if eq .source "/index.md" }} class="current"{{end}}>Про нас</a>
-    <a href="/ua/programs.html"{{ if eq .source "/ru/programs.md" }} class="current"{{end}}>Програми</a>
-    <a href="/ua/seminars.html"{{ if eq .source "/ru/seminars.md" }} class="current"{{end}}>Тренінги</a>
-    <a href="/ua/enroll.html"{{ if eq .source "/ru/enroll.md" }} class="current"{{end}}>Абітурієнту</a>
-    <a href="/ua/donate.html"{{ if eq .source "/ru/donate.md" }} class="current"{{end}}>Підтримати</a>
-    <a href="/ua/contact.html"{{ if eq .source "/ru/contact.md" }} class="current"{{end}}>Контакти</a>
-</nav>
-{{ else }}
-<nav id="menu">
-    <a href="/index.html"{{ if eq .source "/index.md" }} class="current"{{end}}>О нас</a>
-    <a href="/ru/programs.html"{{ if eq .source "/ru/programs.md" }} class="current"{{end}}>Программы</a>
-    <a href="/ru/seminars.html"{{ if eq .source "/ru/seminars.md" }} class="current"{{end}}>Тренинги</a>
-    <a href="/ru/enroll.html"{{ if eq .source "/ru/enroll.md" }} class="current"{{end}}>Абитуриенту</a>
-    <a href="/ru/donate.html"{{ if eq .source "/ru/donate.md" }} class="current"{{end}}>Пожертвовать</a>
-    <a href="/ru/contact.html"{{ if eq .source "/ru/contact.md" }} class="current"{{end}}>Контакты</a>
-</nav>
-{{ end }}
-
-<main>
-{{ block `main` . }}
-<section class="content">
-    {{ .content }}
-</section>
-
 {{/*
   <newsletterform locale="{{ .locale }}" style="padding: 2em;" v-cloak>
     {{ if eq .locale `en-US`}}

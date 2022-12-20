@@ -1,0 +1,44 @@
+---
+const { locale } = Astro.props;
+
+let items = [
+    { URL: "/index.html", label: "Про нас"},
+    { URL: "/ua/programs.html", label: "Програми"},
+    { URL: "/ua/seminars.html", label: "Тренінги"},
+    { URL: "/ua/enroll.html", label: "Абітурієнту"},
+    { URL: "/ua/donate.html", label: "Підтримати"},
+    { URL: "/ua/contact.html", label: "Контакти"},
+]
+
+if (locale === "en") items = [
+    { URL: "/en/index.html", label: "Home"},
+    { URL: "/en/programs.html", label: "Programs"},
+    { URL: "/en/seminars.html", label: "Seminars"},
+    { URL: "/en/enroll.html", label: "Apply"},
+    { URL: "/en/donate.html", label: "Give"},
+    { URL: "/en/contact.html", label: "Contact"},
+]
+
+if (locale === "ru") items = [
+    { URL: "/ru/index.html", label: "О нас"},
+    { URL: "/ru/programs.html", label: "Программы"},
+    { URL: "/ru/seminars.html", label: "Тренинги"},
+    { URL: "/ru/enroll.html", label: "Абитуриенту"},
+    { URL: "/ru/donate.html", label: "Пожертвовать"},
+    { URL: "/ru/contact.html", label: "Контакти"},
+]
+
+---
+
+<nav id="menu">
+    {
+        items.map((item) =>
+            <a
+                href={item.URL}
+                title={item.label}
+                class={Astro.url.pathname === item.URL ? "current" : null}>
+                    {item.label}
+            </a>
+        )
+    }
+</nav>
