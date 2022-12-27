@@ -1,12 +1,37 @@
 ---
-import { localizePath } from "astro-i18next";
-import i18next, { t } from "i18next";
+const locale = Astro.props.locale || "ua";
+const path = Astro.url.pathname;
+
+const URL = (locale) => {
+    const m = path.match(/^\/(ua|ru|en)\/(\w+)$/);
+
+    if (m && [
+        "programs",
+        "seminars",
+        "enroll",
+        "donate",
+        "contact",
+    ].includes(m[2])) return `/${locale}/${m[2]}.html`;
+    if (locale === "en") return "/en/index.html";
+    if (locale === "ru") return "/ru/index.html";
+    return "/index.html";
+}
 ---
 
 <div id="lang">
-<!--
-  { i18next.language === "ru" ? "" : <a href="/ru/index.html">🇷🇺</a> }
-  -->
-  { i18next.language === "ua" ? "" : <a href="/index.html">🇺🇦</a> }
-  { i18next.language === "en" ? "" : <a href="/en/index.html">🇬🇧</a> }
+    { locale !== "ua" ? <a href={URL("ua")}>🇺🇦</a> : "" }
+    { locale !== "en" ? <a href={URL("en")}>🇬🇧</a> : "" }
+    { locale !== "ru" ? <a href={URL("ru")}>🇷🇺</a> : "" }
 </div>
+
+<style>
+#lang {
+    position: absolute;
+    right: 0.7em;
+    top: 0.3em;
+}
+
+#lang a {
+    margin-left: 0.5em;
+}
+</style>

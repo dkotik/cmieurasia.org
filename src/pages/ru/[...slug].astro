@@ -43,7 +43,6 @@ const matchYoutubeLink = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|you
     description={frontmatter?.description}
     class={frontmatter?.class}
 >
-    <h1 class="title">{frontmatter?.title}</h1>
     <Content components={{
         img: async ({ src, alt, title }) => {
             // console.log(images, images[path + src]);

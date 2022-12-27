@@ -1,10 +1,7 @@
 ---
-language: Русский
-ru:
-    title: "ИЦС: Абитуриенту"
-template: static/templates/enroll.tmpl
+title: "Абитуриенту"
 ---
-### Требования
+# Требования
 
 1. Вы верите в Иисуса Христа, приняли водное
     крещение, принадлежите поместной
@@ -116,7 +113,7 @@ Horizon Educational Network оказывает нам
 
 **По завершении онлайн-курсов Программы Сертификат студенты получат сертификат Института Церковного Служения.**
 
-![Sasha Video](https://youtu.be/O27E8cMx2Bw)
+[Sasha Video](https://youtu.be/O27E8cMx2Bw)
 
 <a class="button is-info" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdShM0M6drZnBUYKFkRzPEv4KULaWHQVJ_3tZgIBQDjnazOhA/viewform">Заполнить анкету</a>
 

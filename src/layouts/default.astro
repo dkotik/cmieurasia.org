@@ -4,6 +4,7 @@ import Language from "./fragments/language.astro";
 import HeadMeta from "./fragments/headmeta.astro";
 import Menu from "./menu.astro";
 import Footer from "./fragments/footer.astro";
+import Language from "./fragments/language.astro";
 import './styles/style.sass';
 
 const locale = /^\/en\//.test(Astro.url.pathname)
@@ -20,6 +21,8 @@ const locale = /^\/en\//.test(Astro.url.pathname)
   <body class={Astro.props.class || "page"}>
     <div id="frame" class="container">
         <slot name="hero">
+            <Language locale={locale} />
+
             <img alt="Church Ministries Institute Logo" src="/img/header/en-dark.png" />
 
             <Menu locale={locale} />
