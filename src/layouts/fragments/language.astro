@@ -19,9 +19,9 @@ const URL = (locale) => {
 ---
 
 <div id="lang">
+    { locale !== "ru" ? <a href={URL("ru")}>🇷🇺</a> : "" }
     { locale !== "ua" ? <a href={URL("ua")}>🇺🇦</a> : "" }
     { locale !== "en" ? <a href={URL("en")}>🇬🇧</a> : "" }
-    { locale !== "ru" ? <a href={URL("ru")}>🇷🇺</a> : "" }
 </div>
 
 <style>

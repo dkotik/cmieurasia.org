@@ -9,7 +9,7 @@ title: "Абитуриенту"
     ней в мире.
 2. Вы вовлечены в церковное служение или будете вовлечены в течение четырёх
     месяцев после первой сессии.
-3. Вы согласны с [вероисповеданием института](/static/kratkoe-ispovedanie.pdf).
+3. Вы согласны с [вероисповеданием института](/documents/kratkoe-ispovedanie.pdf).
 4. Вы имеете полное среднее образование
     (для програми Младшего бакалавра).
 
@@ -43,7 +43,7 @@ title: "Абитуриенту"
 
 Пожалуйста <a href="/ru/contact.html">свяжитесь с нами</a>, чтобы узнать если рядом с вами есть библейская школа на базе поместной церкви.
 
-<a class="button is-info" target="_blank" href="/static/application.pdf">Скачать анкету</a>
+<a class="button is-info" target="_blank" href="/documents/application.pdf">Скачать анкету</a>
 
 ### Региональные центры обучения
 
@@ -61,7 +61,7 @@ title: "Абитуриенту"
 **По окончании программы обучения студенты получат
 аккредитованный диплом «Младшего бакалавра богословия».**
 
-<a class="button is-info" target="_blank" href="/static/application.pdf">Скачать анкету</a>
+<a class="button is-info" target="_blank" href="/documents/application.pdf">Скачать анкету</a>
 
 ### Международный центр
 
@@ -81,7 +81,7 @@ title: "Абитуриенту"
 диплом «Бакалавра богословия» со специализацией
 «Церковное служение».**
 
-<a class="button is-info" target="_blank" href="/static/application.pdf">Скачать анкету</a>
+<a class="button is-info" target="_blank" href="/documents/application.pdf">Скачать анкету</a>
 
 ### Онлайн Курсы
 
