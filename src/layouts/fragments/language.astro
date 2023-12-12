@@ -19,19 +19,20 @@ const URL = (locale) => {
 ---
 
 <div id="lang">
-    { locale !== "ru" ? <a href={URL("ru")}>🇷🇺</a> : "" }
-    { locale !== "ua" ? <a href={URL("ua")}>🇺🇦</a> : "" }
-    { locale !== "en" ? <a href={URL("en")}>🇬🇧</a> : "" }
+    { locale !== "ua" ? <a href={URL("ua")}>UA</a> : "" }
+    { locale !== "ru" ? <a href={URL("ru")}>RU</a> : "" }
+    { locale !== "en" ? <a href={URL("en")}>EN</a> : "" }
 </div>
 
 <style>
 #lang {
     position: absolute;
     right: 0.7em;
-    top: 0.3em;
+    /* top: 0.3em; */
 }
 
 #lang a {
     margin-left: 0.5em;
+    font-size: 0.5em;
 }
 </style>
